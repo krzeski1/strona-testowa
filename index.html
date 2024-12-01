@@ -25,9 +25,95 @@ img {
     height: auto; 
     object-fit: cover; 
 }
-        </style>
+.calculator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #f9f9f9;
+      margin-left: 30px;
+    }
+
+    .calculator input {
+      margin: 5px 0;
+      padding: 10px;
+      width: 100px;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .calculator button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .calculator button:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    
+    .left {
+      margin-left: 20px;
+    }
+
+    .center {
+      margin-left: auto;
+      margin-right: auto;
+      cursor: pointer;
+      border-radius: 10px; 
+      transition: transform 0.3s ease;
+    }
+
+    .right {
+      margin-right: 20px;
+    }
+    .pink-text {
+      color: rgb(238, 0, 178); 
+      font-size: 20px; 
+      margin-left: 20px; 
+    }
+    </style>
 </head>
 <body>
-    
+    <img src="skala.jpg" alt="skala" class="left">
+    <div class="calculator">
+        <h2>Kalkulator</h2>
+        <input type="number" id="number1" placeholder="Liczba 1">
+        <input type="number" id="number2" placeholder="Liczba 2">
+        <button onclick="calculate()">Dodaj</button>
+        <div class="result" id="result">Wynik: </div>
+      </div>
+  
+  <img src="porvalo.webp" alt="porvalo" class="left">
+  <a href="https://www.youtube.com/@vysotzkyy"><img src="nochal.png" alt="nochal" class="center"></a>
+  
+  <p class="pink-text">POZDROWIENIA DLA MARTYNY
+    (to po prawej to norbert gdy cię widzi)
+  </p>
+  <img src="milosc2.webp" alt="milosc2" class="right">
+  
+  <script>
+    function calculate() {
+      const number1 = parseFloat(document.getElementById('number1').value);
+      const number2 = parseFloat(document.getElementById('number2').value);
+      const result = number1 + number2;
+      document.getElementById('result').textContent = `Wynik: ${result}`;
+    }
+  </script>
 </body>
 </html>
